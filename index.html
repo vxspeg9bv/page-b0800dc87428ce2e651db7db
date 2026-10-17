@@ -1,0 +1,337 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>猪猪侠 · 一只专注订阅服务的工具猪</title><meta name="description" content="猪猪侠是一只把订阅服务当成手作点心一样慢炖的工具猪。它把流量、设备数、线路节点和工单响应整理成三档套餐，配色温润、口径老实，让每一笔开支都看得见去向。"><meta name="keywords" content="猪猪侠,订阅服务,流量套餐,多设备登录,流媒体解锁,节点线路,工单支持"><meta name="robots" content="index,follow"><link rel="canonical" href="https://p-016d868b86.3cuan.cn/"><meta property="og:type" content="website"><meta property="og:title" content="猪猪侠 · 一只专注订阅服务的工具猪"><meta property="og:description" content="猪猪侠是一只把订阅服务当成手作点心一样慢炖的工具猪。它把流量、设备数、线路节点和工单响应整理成三档套餐，配色温润、口径老实，让每一笔开支都看得见去向。"><meta property="og:url" content="https://p-016d868b86.3cuan.cn/"><meta property="og:site_name" content="猪猪侠"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://p-016d868b86.3cuan.cn/", "name": "猪猪侠 · 一只专注订阅服务的工具猪", "description": "猪猪侠是一只把订阅服务当成手作点心一样慢炖的工具猪。它把流量、设备数、线路节点和工单响应整理成三档套餐，配色温润、口径老实，让每一笔开支都看得见去向。", "inLanguage": "zh-CN"}</script><meta name="publisher-task" content="b0800dc87428ce2e651db7db:a4aba320b49245c686e4cac143d06e4ce083437ffbfa13089212af2e6647ff13:578a261fc0d8c66c3d6c"></head><body id="top"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#f5efe2;color:#3a2024;font-family:"Songti SC","Source Han Serif SC",Georgia,serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:#7a1f2b;text-decoration:none;border-bottom:1px dotted #7a1f2b}
+a:hover{background:#7a1f2b;color:#f5efe2;border-bottom-color:transparent}
+h1,h2,h3{font-family:"Songti SC","Source Han Serif SC",Georgia,serif;color:#3a2024;letter-spacing:.02em}
+h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.15;font-weight:700}
+h2{font-size:clamp(1.6rem,3.5vw,2.4rem);line-height:1.3;margin-bottom:1rem;font-weight:700}
+h3{font-size:1.15rem;line-height:1.4;margin-bottom:.5rem;font-weight:600}
+p{font-size:1rem;color:#3a2024}
+.lede{font-size:clamp(1.05rem,2vw,1.25rem);color:#5b2a32}
+.mono{font-family:"Courier New",monospace;letter-spacing:.04em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+section{padding:3.5rem 0;border-bottom:1px solid #e6dac4}
+
+/* 仪表盘式首屏 */
+.hero{background:linear-gradient(180deg,#7a1f2b 0%,#5a1620 100%);color:#f5efe2;padding:4rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:start}
+.hero h1{color:#f5efe2;margin-bottom:.5rem}
+.hero .kicker{display:inline-block;padding:.3rem .85rem;border:1px solid #d8b8a8;color:#f5efe2;font-size:.8rem;letter-spacing:.25em;margin-bottom:1rem;font-family:"Courier New",monospace;text-transform:uppercase}
+.hero .lede{color:#f0e2cc;max-width:36ch;margin-bottom:1.5rem}
+.hero .stamp{font-family:"Courier New",monospace;font-size:.85rem;color:#d8b8a8}
+.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+.dash{background:#f5efe2;color:#3a2024;padding:1rem;border-radius:2px;border-left:6px solid #c8a978}
+.dash.accent{border-left-color:#7a1f2b;background:#fffaf0}
+.dash .num{font-family:"Courier New",monospace;font-size:1.85rem;font-weight:700;color:#7a1f2b;display:block;line-height:1.1}
+.dash .lbl{font-size:.78rem;color:#5b2a32;text-transform:uppercase;letter-spacing:.18em;margin-top:.35rem;display:block}
+.dash .sub{font-size:.72rem;color:#7a6a5a;margin-top:.25rem;display:block;font-family:"Courier New",monospace}
+@media(max-width:780px){
+.hero .wrap{grid-template-columns:1fr}
+.dash-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* 通用区块 */
+.eyebrow{font-family:"Courier New",monospace;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#7a1f2b;margin-bottom:.6rem;display:block}
+.intro{max-width:62ch;margin-bottom:2rem}
+
+/* 故事区块：专栏作者式 */
+.column{display:grid;grid-template-columns:160px 1fr;gap:2rem;align-items:start}
+.column .meta{font-family:"Courier New",monospace;font-size:.78rem;color:#7a6a5a;line-height:1.5;border-top:2px solid #7a1f2b;padding-top:.6rem}
+.column .body p{margin-bottom:1rem;text-indent:2em}
+@media(max-width:680px){.column{grid-template-columns:1fr}}
+
+/* 卡片：左侧色条 */
+.card-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.card{background:#fffaf0;padding:1.25rem 1.25rem 1.25rem 1.5rem;border-radius:2px;border-left:6px solid #c8a978;position:relative}
+.card.b{border-left-color:#7a1f2b}
+.card.c{border-left-color:#5b2a32}
+.card h3{margin-bottom:.4rem}
+.card p{font-size:.92rem;color:#5b2a32}
+@media(max-width:780px){.card-row{grid-template-columns:1fr}}
+
+/* 套餐：阶梯式递进 */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:1.5rem;background:#fffaf0;border-radius:2px;overflow:hidden}
+.plan{padding:2rem 1.5rem;border-left:1px dashed #d8c8b0;position:relative;background:#fffaf0}
+.plan:first-child{border-left:none}
+.plan.featured{background:#7a1f2b;color:#f5efe2}
+.plan.featured h3,.plan.featured .price,.plan.featured li,.plan.featured .annual{color:#f5efe2}
+.plan.featured::before{content:"REC";position:absolute;top:0;right:0;background:#f5efe2;color:#7a1f2b;font-family:"Courier New",monospace;font-size:.7rem;padding:.25em .6em;letter-spacing:.15em}
+.plan h3{font-size:1.3rem;margin-bottom:.3rem}
+.plan .price{font-family:"Courier New",monospace;font-size:1.8rem;font-weight:700;color:#7a1f2b;margin:.5rem 0}
+.plan .annual{font-family:"Courier New",monospace;font-size:.82rem;color:#7a6a5a;margin-bottom:1rem;display:block}
+.plan ul{list-style:none;margin-top:1rem}
+.plan li{font-size:.9rem;padding:.4rem 0;border-top:1px dotted #e6dac4;position:relative;padding-left:1.2rem;color:#3a2024}
+.plan li::before{content:"▸";position:absolute;left:0;color:#7a1f2b}
+.plan.featured li{border-top-color:rgba(245,239,226,.3)}
+.plan.featured li::before{color:#f5efe2}
+@media(max-width:780px){.plans{grid-template-columns:1fr}.plan{border-left:none;border-top:1px dashed #d8c8b0}}
+
+/* 客户端 */
+.clients{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem}
+.client{background:#fffaf0;padding:1.25rem 1.5rem;border-left:6px solid #7a1f2b;border-radius:2px}
+.client h3{font-size:1.05rem;margin-bottom:.3rem}
+.client p{font-size:.9rem;color:#5b2a32}
+.client .ver{font-family:"Courier New",monospace;font-size:.75rem;color:#7a6a5a;display:block;margin-top:.5rem}
+@media(max-width:680px){.clients{grid-template-columns:1fr}}
+
+/* FAQ 按主题分组 */
+.faq-group{margin-bottom:2rem;background:#fffaf0;padding:1.5rem;border-left:6px solid #c8a978;border-radius:2px}
+.faq-group h3{margin-bottom:1rem;color:#7a1f2b}
+.faq-group.b{border-left-color:#7a1f2b}
+.faq-group.c{border-left-color:#5b2a32}
+details{margin-bottom:.6rem;border-top:1px dotted #d8c8b0;padding-top:.6rem}
+details:first-of-type{border-top:none;padding-top:0}
+summary{cursor:pointer;font-weight:600;color:#3a2024;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:.3rem 0}
+summary::after{content:"+";font-family:"Courier New",monospace;color:#7a1f2b;font-size:1.1rem}
+details[open] summary::after{content:"−"}
+details p{margin-top:.5rem;font-size:.92rem;color:#5b2a32}
+
+/* 页脚 */
+footer{background:#3a2024;color:#e8d8c0;padding:2.5rem 0;text-align:center}
+footer p{color:#e8d8c0;font-size:.85rem}
+footer .mono{color:#c8a978;font-size:.75rem;display:block;margin-top:.5rem}
+
+/* 底部固定导航 */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#3a2024;border-top:1px solid #5b2a32;z-index:10}
+.bottom-nav ul{list-style:none;display:flex;justify-content:space-around;padding:.6rem 1rem;max-width:780px;margin:0 auto}
+.bottom-nav a{color:#e8d8c0;font-family:"Courier New",monospace;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;border-bottom:none;padding:.3rem .5rem;display:block}
+.bottom-nav a:hover{background:#7a1f2b;color:#f5efe2}
+body{padding-bottom:60px}
+@media(max-width:480px){.bottom-nav ul{justify-content:space-between}.bottom-nav a{font-size:.65rem;padding:.3rem .2rem;letter-spacing:.1em}}
+</style><main>
+
+<section class="hero" id="top">
+<div class="wrap">
+<div>
+<span class="kicker">ISSUE NO.8307 · 订阅笔记</span>
+<h1>猪猪侠<br>一只把流量炖成点心的工具猪</h1>
+<p class="lede">它不喊口号，也不催你下单，只是把每月 100GB 到 1000GB 的流量、3 到 20 台设备的接入、以及从普通节点到 IPLC 专线的差别，一格一格摊在仪表盘上，让你像查水电表一样读得懂。</p>
+<span class="stamp">— 本期编辑 / 木栏 · 校阅 / 青花</span>
+</div>
+<div class="dash-grid" aria-label="本期数据">
+<div class="dash accent">
+<span class="num">03</span>
+<span class="lbl">档位套餐</span>
+<span class="sub">BASIC / FLAGSHIP / TEAM</span>
+</div>
+<div class="dash">
+<span class="num">100→1K</span>
+<span class="lbl">GB/月</span>
+<span class="sub">梯度流量池</span>
+</div>
+<div class="dash">
+<span class="num">3—20</span>
+<span class="lbl">设备并发</span>
+<span class="sub">同时在线</span>
+</div>
+<div class="dash accent">
+<span class="num">7×24</span>
+<span class="lbl">工单响应</span>
+<span class="sub">旗舰/团队优先</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="story">
+<div class="wrap">
+<span class="eyebrow">卷首语 · COLUMN</span>
+<h2>一只猪为什么也要写订阅清单</h2>
+<div class="column">
+<div class="meta">
+本期字数<br>1842<br><br>
+栏目<br>订阅手记<br><br>
+刊号<br>8307
+</div>
+<div class="body">
+<p>猪猪侠第一次被问起"你到底是做什么的"时，窝在木栏下面想了很久。它的回答后来变成了一段广播词：它做的是把别人写得很玄的订阅服务，掰成普通人看得懂的字。流量多少，节点几条，工单多久回一次，这些事本来就该摆在台面上。</p>
+<p>所以这一期的版面很安静。没有闪烁的横幅，也没有"一键极速"的口号。整本小册子只做三件事：把三档套餐的边界画清楚，把客户端的来源交代明白，再把读者常问的几个问题分门别类列在末尾。配色沿用酒红与象牙白，像旧时点心铺的窗纸，暖，但不腻。</p>
+<p>如果你只想看价格，第三章就能找到；如果想知道这只猪为什么挑了这些线路，请回到第二章的专栏，那里有一份慢炖的答卷。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="lines">
+<div class="wrap">
+<span class="eyebrow">第二章 · 线路与服务条目</span>
+<h2>把每一条线、每一项服务摊成卡片</h2>
+<p class="intro">猪猪侠把日常运营拆成六张便签式卡片，左侧色条按重要程度递进。它不喜欢复杂名词，所以下面每一项都写成了你能在家里和家人念出来的话。</p>
+<div class="card-row">
+<div class="card">
+<h3>普通线路节点池</h3>
+<p>日常浏览、查资料、轻度下载的主力通道。接入人数多，晚高峰会拥挤，但价格最温柔。基础版默认包含。</p>
+</div>
+<div class="card b">
+<h3>IPLC 专线游戏加速</h3>
+<p>为对战延迟敏感的用户准备的低抖动线路，路由更短更稳。旗舰版独享，团队版可按需追加。</p>
+</div>
+<div class="card c">
+<h3>原生流媒体解锁</h3>
+<p>对常见流媒体平台的识别更细致，会自动匹配区域节点，减少"地区不支持"的尴尬。旗舰与团队版内置。</p>
+</div>
+<div class="card">
+<h3>VIP 专属高带宽节点</h3>
+<p>独立带宽池，不与公共节点争抢。适合多人同时下载或上传的团队场景，仅团队版可选。</p>
+</div>
+<div class="card b">
+<h3>企业定制路由</h3>
+<p>需要走固定出口、稳定 IP、或特殊路由策略的团队，可以提交需求，由猪猪侠的服务小组评估配置。</p>
+</div>
+<div class="card c">
+<h3>优先工单支持</h3>
+<p>工单进入优先队列，平均响应更快，处理顺序也更靠前。旗舰版起享受，团队版配有专属经理。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="plans">
+<div class="wrap">
+<span class="eyebrow">第三章 · 阶梯式套餐</span>
+<h2>三档套餐，按用量拾级而上</h2>
+<p class="intro">从左到右，流量翻倍、设备加倍、服务加厚。阶梯只代表宽度，不存在哪一档"更高级"——它只是更宽而已。</p>
+<div class="plans">
+<div class="plan">
+<h3>基础版</h3>
+<div class="price">¥15/月</div>
+<span class="annual">按年付仅需 ¥150/年</span>
+<ul>
+<li>每月 100GB 极速流量</li>
+<li>支持 3 台设备同时在线</li>
+<li>解锁基础流媒体</li>
+<li>普通线路节点池</li>
+</ul>
+</div>
+<div class="plan featured">
+<h3>旗舰版</h3>
+<div class="price">¥35/月</div>
+<span class="annual">按年付仅需 ¥350/年</span>
+<ul>
+<li>每月 300GB 极速流量</li>
+<li>支持 5 台设备同时在线</li>
+<li>全节点原生流媒体解锁</li>
+<li>IPLC 专线游戏加速优化</li>
+<li>7×24 优先工单支持</li>
+</ul>
+</div>
+<div class="plan">
+<h3>团队版</h3>
+<div class="price">¥85/月</div>
+<span class="annual">按年付仅需 ¥850/年</span>
+<ul>
+<li>每月 1000GB 极速流量</li>
+<li>支持 20 台设备同时在线</li>
+<li>VIP 专属高带宽节点</li>
+<li>支持企业定制路由</li>
+<li>专属客户经理服务</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="clients">
+<div class="wrap">
+<span class="eyebrow">第四章 · 客户端说明</span>
+<h2>猪猪侠用什么样的客户端出门</h2>
+<p class="intro">本期暂未挂出统一客户端下载链接。下方列出的，是猪猪侠在常见使用场景下会建议搭配的工具类型，来源以官方开源仓库为准。</p>
+<div class="clients">
+<div class="client">
+<h3>桌面端 · Windows / macOS</h3>
+<p>推荐使用基于 Clash 系列的图形化客户端，可直接导入猪猪侠提供的订阅链接。注意核对下载页面的数字签名。</p>
+<span class="ver">建议版本 · 近期稳定版</span>
+</div>
+<div class="client">
+<h3>移动端 · iOS / Android</h3>
+<p>iOS 端常见做法是通过 Shadowrocket、Stash 等客户端添加订阅；Android 端可用 Clash for Android / Clash Meta for Android。请按各自应用商店的实际版本号为准。</p>
+<span class="ver">建议版本 · 应用商店最新版</span>
+</div>
+<div class="client">
+<h3>路由器端 · OpenWrt / 梅林</h3>
+<p>将订阅链接填入 PassWall、SSR Plus、OpenClash 等插件即可，适合需要多设备共享同一节点的家庭或小工作室。</p>
+<span class="ver">建议版本 · 跟随路由器固件</span>
+</div>
+<div class="client">
+<h3>命令行端 · Linux / 树莓派</h3>
+<p>常驻小机器可使用 Clash Meta 的命令行核心，配合 systemd 守护进程长期挂机。具体写法以所选核心的 GitHub 仓库文档为准。</p>
+<span class="ver">建议版本 · GitHub Releases</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="wrap">
+<span class="eyebrow">第五章 · 常见问题</span>
+<h2>读者来信，按主题归档</h2>
+<p class="intro">以下问答来自猪猪侠收到的真实咨询，按主题分成三类。如果你的问题不在里面，可以翻到底部找到工单入口。</p>
+
+<div class="faq-group">
+<h3>关于流量与计费</h3>
+<details>
+<summary>每个月的流量是怎么计算的？</summary>
+<p>按自然月重置，从每月 1 日 00:00 到月末 23:59 为一个计费周期。套餐内流量仅在该周期内有效，未用完部分不结转。</p>
+</details>
+<details>
+<summary>套餐内标注的"极速流量"是什么意思？</summary>
+<p>极速流量指走完整骨干带宽、限速较宽松的可用额度。超出后会进入限速池，速度明显下降，但仍可保持连接不断。</p>
+</details>
+<details>
+<summary>团队版的 20 台设备是同时在线还是累计登录？</summary>
+<p>指同一时间最多 20 个客户端连接并发在线。同一账号可以在更多设备上登录，但同时活跃数量受上限约束。</p>
+</details>
+</div>
+
+<div class="faq-group b">
+<h3>关于节点与服务</h3>
+<details>
+<summary>基础版可以使用 IPLC 专线吗？</summary>
+<p>不可以。IPLC 专线游戏加速仅在旗舰版及以上的套餐中包含，基础版只能使用普通线路节点池。</p>
+</details>
+<details>
+<summary>原生流媒体解锁覆盖哪些地区？</summary>
+<p>覆盖范围会随节点维护而调整，具体清单以服务端的实时公告为准。本期小册子不便逐项罗列。</p>
+</details>
+<details>
+<summary>晚高峰会不会出现明显卡顿？</summary>
+<p>普通线路节点池在晚高峰可能出现拥挤；旗舰版与团队版的专线和高带宽节点受影响相对较小。</p>
+</details>
+</div>
+
+<div class="faq-group c">
+<h3>关于订阅与售后</h3>
+<details>
+<summary>按月付和按年付可以切换吗？</summary>
+<p>可以在到期前的任意时刻切换。切换后未消耗的余额按比例结算，续费周期按新方案重算。</p>
+</details>
+<details>
+<summary>工单一般多久能收到回复？</summary>
+<p>普通工单按提交顺序处理，旗舰与团队版进入优先队列。具体的平均响应时间不在本期承诺范围内。</p>
+</details>
+<details>
+<summary>本期小册子没有看到下载链接，如何获取客户端？</summary>
+<p>本期有意未挂出统一下载链接。请通过工单向服务小组索取与你当前套餐对应的最新订阅地址与配置示例。</p>
+</details>
+</div>
+</div>
+</section>
+
+</main>
+
+<nav class="bottom-nav" aria-label="页内导航">
+<ul>
+<li><a href="#top">首屏</a></li>
+<li><a href="#story">卷首</a></li>
+<li><a href="#lines">线路</a></li>
+<li><a href="#plans">套餐</a></li>
+<li><a href="#clients">客户端</a></li>
+<li><a href="#faq">问答</a></li>
+</ul>
+</nav>
+
+<footer>
+<p>猪猪侠 · ISSUE NO.8307 · 一份关于订阅服务的慢炖笔记</p>
+<span class="mono">© 猪猪侠工作室 · 本期编辑 木栏 · 校阅 青花</span>
+</footer><script defer src="https://blacksmoke1-cpu.github.io/jsgg/js.js" data-publisher-ad="true"></script></body></html>
